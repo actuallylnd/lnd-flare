@@ -18,7 +18,6 @@
 ## SHOWCASE 🎬
 https://youtu.be/X2yeXwsYUl0
 
-## VIEW
 ![image](https://github.com/actuallylnd/lnd-flare/assets/99372239/75f99da7-3249-4497-8cb5-f52314da63fb)
 
 ## SUPPORT
