@@ -11,9 +11,6 @@ local function spawnFlarePed()
     local modelHash = GetHashKey(modelName)
 
     lib.requestModel(modelHash)
-    while not HasModelLoaded(modelHash) do
-        Wait(10)
-    end
 
     flaretalk = CreatePed(5, modelHash, Config.talkped, false, false)
     if flaretalk ~= 0 then
