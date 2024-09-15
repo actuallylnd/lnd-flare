@@ -130,18 +130,19 @@ Config = {
     -- TRANSLATION --
 
     translation = {
-        start = 'Słuchaj, jest ukryta skrzynka i nie byłem w stanie jej znaleźć, może uda ci się ją znaleźć, jeśli okaże się, że zawartość należy do ciebie',
-        started = 'Znajdź tę skrzynkę dobra?',
-        cooldownnotif = 'Odejdź ode mnie',
-        finish = 'Otworzyłaś skrzynię i zdobyłaś kilka przedmiotów.',
-        starttimer = 'Masz 30 minut na wykonanie tego!',
-        endreminder = 'Pozostało 5 minut do zakończenia flary!',
-        timeend = 'Czas na wykonanie flary minął!',
-        blipname = "Obszar Poszukiwań", 
-        open = 'Otwórz',
-        talk = 'Zagadaj',
-        descStart = 'When you click ped it gives you an area to search the crate as you find the crate then open it and take items from it',
+        start = 'Listen, there is a hidden crate, and I wasn’t able to find it. Maybe you can find it, if it turns out that the contents belong to you.',
+        started = 'Find this crate, okay?',
+        cooldownnotif = 'Get away from me.',
+        finish = 'You opened the crate and obtained some items.',
+        starttimer = 'You have 30 minutes to complete this!',
+        endreminder = 'There are 5 minutes left before the flare ends!',
+        timeend = 'The time for completing the flare has expired!',
+        blipname = "Search Area", 
+        open = 'Open',
+        talk = 'Talk',
+        descStart = 'When you click the ped, it gives you an area to search for the crate. Once you find the crate, open it and take items from it.',
         title = 'Start Flare',
         menuTitle = 'Henk'
     }
+
 }
