@@ -1,7 +1,7 @@
 Config = {
 
-    TaskDuration = 25 * 60 * 1000,
-    WarningTime = 25 * 60 * 1000, 
+    TaskDuration = 25 * 60 * 1000, -- *Give time in milliseconds*
+    WarningTime = 25 * 60 * 1000,  -- *Give time in milliseconds*
 
     OrderCooldown = 180000, -- *Give time in milliseconds*
 
