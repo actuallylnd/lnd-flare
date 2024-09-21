@@ -1,7 +1,15 @@
+function Dispatch(ped, coords)
+    print('Player: '..ped ..'Coords: '..coords)
+end
+
 Config = {
 
-    TaskDuration = 25 * 60 * 1000, -- *Give time in milliseconds*
-    WarningTime = 25 * 60 * 1000,  -- *Give time in milliseconds*
+    TaskDuration = 25 * 60 * 1000,
+    WarningTime = 25 * 60 * 1000, 
+
+    Dispatch = true,
+
+    RequiredPolice = 1,
 
     OrderCooldown = 180000, -- *Give time in milliseconds*
 
@@ -130,19 +138,19 @@ Config = {
     -- TRANSLATION --
 
     translation = {
-        start = 'Listen, there is a hidden crate, and I wasn’t able to find it. Maybe you can find it, if it turns out that the contents belong to you.',
-        started = 'Find this crate, okay?',
-        cooldownnotif = 'Get away from me.',
-        finish = 'You opened the crate and obtained some items.',
-        starttimer = 'You have 30 minutes to complete this!',
-        endreminder = 'There are 5 minutes left before the flare ends!',
-        timeend = 'The time for completing the flare has expired!',
+        start = 'Listen, there is a hidden box and I have not been able to find it, maybe you can find it if it turns out that the contents belong to you',
+        started = 'Find this box!',
+        cooldownnotif = 'Get away from me',
+        finish = 'You opened the chest and got some items.',
+        starttimer = 'You have 30 minutes to do it!',
+        endreminder = '5 minutes left until the flare ends!',
+        timeend = 'Time has passed maybe next time you will succeed!',
         blipname = "Search Area", 
         open = 'Open',
         talk = 'Talk',
-        descStart = 'When you click the ped, it gives you an area to search for the crate. Once you find the crate, open it and take items from it.',
+        descStart = 'When you click ped it gives you an area to search the crate as you find the crate then open it and take items from it',
         title = 'Start Flare',
-        menuTitle = 'Henk'
+        menuTitle = 'Henk',
+        no_required_police = 'Lack of enough officers'
     }
-
 }

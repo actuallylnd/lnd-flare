@@ -11,6 +11,9 @@ local function spawnFlarePed()
     local modelHash = GetHashKey(modelName)
 
     lib.requestModel(modelHash)
+    while not HasModelLoaded(modelHash) do
+        Wait(10)
+    end
 
     flaretalk = CreatePed(5, modelHash, Config.talkped, false, false)
     if flaretalk ~= 0 then
@@ -36,6 +39,19 @@ local function spawnFlarePed()
         }
     })
 end
+
+RegisterNetEvent('lnd-flare:receivePoliceCount')
+AddEventHandler('lnd-flare:receivePoliceCount', function(policeCount)
+    local requiredPolice = Config.RequiredPolice
+
+    if policeCount < requiredPolice then
+        lib.notify({ type = 'error', description = Config.translation.no_required_police })
+        return
+    else
+        handleFlareTalkSelect()
+    end
+end)
+
 
 function handleFlareTalkSelect()
     ESX.TriggerServerCallback('lnd-flare:server:checkCooldown', function(isCooldownActive)
@@ -93,6 +109,8 @@ function handleFlareTalkSelect()
 end
 
 function ContextMenu()
+    local ped = GetEntityCoords(flaretalk)
+    
     ESX.TriggerServerCallback('lnd-flare:server:checkCooldown', function(isCooldownActive)
         lib.registerContext({
             id = 'flare-menu',
@@ -104,7 +122,7 @@ function ContextMenu()
                     icon = 'star',
                     disabled = isCooldownActive,
                     onSelect = function ()
-                        handleFlareTalkSelect()
+                        TriggerServerEvent('lnd-flare:checkPoliceCount', ped)
                     end
                 },
             }
@@ -225,6 +243,13 @@ function randomZone()
             label = Config.translation.open,
             distance = 10,
             onSelect = function()
+                local ped = GetPlayerPed(playerPed)
+                local coords = GetEntityCoords(playerPed)
+
+                if Config.Dispatch then
+                    Dispatch(ped, coords)
+                end
+
                 playAnimation()
                 local success = lib.skillCheck(Config.SkillCheckSettings.Difficulties, Config.SkillCheckSettings.Keys)
                 if not success then
