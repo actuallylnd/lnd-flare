@@ -1,8 +1,10 @@
-function Dispatch(ped, coords)
-    print('Player: '..ped ..'Coords: '..coords)
+function Dispatch(playerPed, coords)
+    print('Player: '..playerPed ..' Coords: '..coords)
 end
 
 Config = {
+
+    Debug = false,
 
     TaskDuration = 25 * 60 * 1000,
     WarningTime = 25 * 60 * 1000, 
@@ -11,7 +13,7 @@ Config = {
 
     RequiredPolice = 1,
 
-    OrderCooldown = 180000, -- *Give time in milliseconds*
+    OrderCooldown = 180000, -- Give time in milliseconds
 
     PedModel = "a_m_m_skidrow_01",
 
@@ -22,18 +24,26 @@ Config = {
     ZonePed =  {
         coords = vec3(-1518.0, 1503.0, 112.0),
         radius = 20,
-        debug = false,
     },
 
     chestprop = `ba_prop_battle_chest_closed`,
 
+    ZoneRadius = 125.0,
+
+    CleanTime = 5000, -- After 5 secounds flare effect, blip and chest will be deleted 
+
+    RequiredItemEnabled = false,
+
+    RequiredItem = 'phone',
+
+    RequiredItemQuanity = 1,
 
     SkillCheckSettings = {
         Difficulties = { 'easy', 'easy', 'easy', 'medium', 'medium', {areaSize = 60, speedMultiplier = 1}, 'easy' },
         Keys = { 'w', 's', 'a', 'd', 'e' }
     },
 
-    -- YOU CAN ADD MORE ZONES
+    -- You can add more zones 
     Zones = {
         {
             ZoneName = "Zone1",
@@ -48,6 +58,7 @@ Config = {
                 vec3(2032.5775, 3880.7380, 32.9945),
             }
         },
+        --[[
         {
             ZoneName = "Zone2",
             FlareCoords = vec4(-1391.8510, 4431.8545, 31.0721, 125.0),
@@ -133,11 +144,14 @@ Config = {
                 vec3(668.2697, -2082.4404, 8.4856),
             }
         },
+        --]]
     },    
 
     -- TRANSLATION --
 
     translation = {
+        no_required_item = 'You don\'t have required item',
+        stolen = 'Someone has stolen your chest!',
         start = 'Listen, there is a hidden box and I have not been able to find it, maybe you can find it if it turns out that the contents belong to you',
         started = 'Find this box!',
         cooldownnotif = 'Get away from me',
