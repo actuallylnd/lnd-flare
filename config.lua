@@ -4,7 +4,7 @@ end
 
 Config = {
 
-    Debug = true,
+    Debug = false,
 
     TaskDuration = 25 * 60 * 1000,
     WarningTime = 25 * 60 * 1000, 
